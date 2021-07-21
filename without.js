@@ -1,6 +1,12 @@
 let eqArrays = function(arr1, arr2) {
   let idx = 0;
-  while (idx < arr1.length) {
+  let longer = 0;
+  if (arr1.length > arr2.length) {
+    longer += arr1.length;
+  } else {
+    longer += arr2.length;
+  }
+  while (idx < longer) {
     if (arr1[idx] !== arr2[idx]) {
       return false;
     }
@@ -41,5 +47,3 @@ assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 const test1 = [1,2,3,4,5,"hello","goodbye"];
 console.log(without(test1, [4,5,"goodbye"])); // => [1,2,3,"hello"]
 assertArraysEqual(test1, [1,2,3,4,5,"hello","goodbye"]);
-
-//assertArraysEqual(["hello","world","lighthouse"],["hello","world"]);
